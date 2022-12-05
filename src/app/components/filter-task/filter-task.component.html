@@ -1,0 +1,22 @@
+<form [formGroup]="filterForm" (ngSubmit)="onSubmit()" class="filter-form">
+  
+  <div class="form-control">
+    <label for="textFilter">Text Filter</label>
+    <app-autocomplete-input
+      [dataSource]="dataSource"
+      [debounceMilliSeconds]="300"
+      [maxDisplayLength]="10"
+      [minInputLength]="0"
+      formControlName="textFilter"
+    ></app-autocomplete-input>
+  </div>
+
+  <div class="form-control">
+    <label for="dateFilter">Date Filter</label>
+    <input type="date" formControlName="dateFilter"/>
+  </div>
+
+  ngFor
+
+  <input type="submit" value="Filter Tasks" class="btn btn-block" [disabled]="!filterForm.valid"/>
+</form>

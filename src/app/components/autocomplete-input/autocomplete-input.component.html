@@ -1,0 +1,27 @@
+<div class="input-wrapper"
+  tabindex=-1
+  (focusin)
+  (click)="onClick()">
+  
+  <input
+    #input
+    type="text"
+    class="form-control"
+    name="textFilter"
+    placeholder="Start typing"
+    [(ngModel)]="query"
+    (input)="onInput()"
+    (blur)="onBlur()"
+  />
+
+  <div class="options_container" *ngIf="isOpen">
+    
+    <app-autocomplete-option
+      *ngFor="let option of options"
+      [option]="option"
+      [query]="query"
+      (select)="optionSelected($event)"
+    ></app-autocomplete-option>
+  
+  </div>
+</div>
