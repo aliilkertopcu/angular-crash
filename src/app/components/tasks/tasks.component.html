@@ -1,0 +1,16 @@
+<app-add-task
+  *ngIf="showAddTask"
+  (onAddTask)="addTask($event)">
+</app-add-task>
+
+<app-filter-task
+  *ngIf="showFilterTask"
+  (onSearchTasks)="searchTasks($event)">
+</app-filter-task>
+
+<app-task-item
+  (onDeleteTask)="deleteTask(task)"
+  (onToggleReminder)="toggleReminder(task)"
+  *ngFor="let task of tasks"
+  [task]="task"
+></app-task-item>

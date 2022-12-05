@@ -1,0 +1,8 @@
+.input-wrapper{
+  white-space: nowrap;
+}
+
+.options_container {
+  z-index: 1000;
+  position: absolute;
+}

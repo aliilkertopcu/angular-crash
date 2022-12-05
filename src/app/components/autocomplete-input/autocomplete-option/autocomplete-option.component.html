@@ -1,0 +1,9 @@
+<div
+  [ngStyle]="{ backgroundColor: option.isHighlighted ? 'lightgrey' : 'white' }"
+  class="div_opt"
+  (click)="onSelect()"
+>
+  <span>{{ prefix }}</span>
+  <span class="highlighted">{{ highLightedPart }}</span>
+  <span>{{ suffixes.join(highLightedPart) }}</span>
+</div>
